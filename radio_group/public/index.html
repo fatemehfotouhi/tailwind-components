@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio group</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+</head>
+
+<body class=" bg-gradient-to-r from-cyan-500 to-blue-700 flex items-center justify-center h-screen">
+    <div class="max-w-screen-sm w-full flex-col gap-y-4 flex" x-data="{
+        isActive:1,
+        activeClass:'ring-4 ring-blue-300 bg-blue-700 text-white'
+    }">
+        <div class="bg-white p-4 rounded-lg flex cursor-pointer justify-between items-center" @click="isActive=1"
+            :class="isActive===1 ? activeClass:'' ">
+            <div>
+                <p class="font-bold mb-2 text-lg">startup</p>
+                <p>16GB/8 CPUs · 512 GB SSD disk</p>
+            </div>
+            <div x-show="isActive===1"
+                class="w-7 h-7 rounded-full bg-blue-400 text-white flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd"
+                        d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg flex cursor-pointer justify-between items-center" @click="isActive=2"
+            :class="isActive===2 ? activeClass:'' ">
+            <div>
+                <p class="font-bold mb-2 text-lg">startup</p>
+                <p>16GB/8 CPUs · 512 GB SSD disk</p>
+            </div>
+            <div x-show="isActive===2"
+                class="w-7 h-7 rounded-full bg-blue-400 text-white flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd"
+                        d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="bg-white p-4 rounded-lg flex cursor-pointer justify-between items-center" @click="isActive=3"
+            :class="isActive===3 ? activeClass:'' ">
+            <div>
+                <p class="font-bold mb-2 text-lg">startup</p>
+                <p>16GB/8 CPUs · 512 GB SSD disk</p>
+            </div>
+            <div x-show="isActive===3"
+                class="w-7 h-7 rounded-full bg-blue-400 text-white flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd"
+                        d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disclosure</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+</head>
+
+<body class="bg-gradient-to-r  from-fuchsia-500 to-violet-500 flex items-center h-screen justify-center">
+    <div class="bg-white p-3 rounded-lg max-w-screen-md w-full">
+        <div x-data="{tabOne:false}">
+            <div class="flex justify-between bg-purple-200 rounded-lg p-4 hover:bg-purple-300 text-purple-900 mb-3 cursor-pointer"
+                @click="tabOne=!tabOne">
+                <p class="font-bold">What is your refund policy?</p>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 transition-all duration-700" :class="tabOne ? 'rotate-180' : '' ">
+                        <path fill-rule="evenodd"
+                            d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </span>
+            </div>
+
+            <div class="p-4" x-show="tabOne">
+                <p>If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in
+                    full, no questions
+                    asked.</p>
+            </div>
+        </div>
+        <div x-data="{tabTwo:false}">
+            <div class="flex justify-between bg-purple-200 rounded-lg p-4 hover:bg-purple-300 text-purple-900 cursor-pointer"
+                @click="tabTwo=!tabTwo">
+                <p class="font-bold">Do you offer technical support?</p>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 transition-all duration-700" :class="tabTwo ? 'rotate-180' : '' ">
+                        <path fill-rule="evenodd"
+                            d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </span>
+            </div>
+
+            <div class="p-4" x-show="tabTwo">
+                <p>No.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+
+</html>

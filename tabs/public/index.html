@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <title>tabs</title>
+</head>
+
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center h-screen">
+    <div class="max-w-screen-md w-full" x-data="{activeTab:1,activeClass:'bg-white  text-blue-500 '}">
+        <!-- tabs -->
+        <div
+            class="rounded-lg bg-blue-600 text-white font-bold bg-opacity-60 p-2  overflow-hidden flex items-center justify-between gap-x-1">
+            <button
+                class="flex justify-center rounded-lg w-full p-4 hover:bg-blue-300 cursor-pointer focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-400"
+                @click="activeTab=1" :class="activeTab===1 ? activeClass : '' ">
+                Recent
+            </button>
+            <button
+                class="flex justify-center rounded-lg w-full p-4 hover:bg-blue-300 cursor-pointer focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-400"
+                @click="activeTab=2" :class="activeTab===2 ? activeClass : '' ">
+                Popular
+            </button>
+            <button
+                class="flex justify-center rounded-lg w-full p-4 hover:bg-blue-300 cursor-pointer focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-400"
+                @click="activeTab=3" :class="activeTab===3 ? activeClass : '' ">
+                Trending
+            </button>
+        </div>
+        <!-- content -->
+        <div class="bg-white rounded-lg p-4 mt-2">
+            <div x-show="activeTab===1">
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">Does drinking coffee make you smarter?</p>
+                    <p class="text-gray-500 text-sm mt-1">5h ago. 5comments. 2shares.</p>
+                </div>
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">So you've bought coffee... now what?</p>
+                    <p class="text-gray-500 text-sm mt-1">2h ago. 3comments. 2shares.</p>
+                </div>
+            </div>
+
+
+            <div x-show="activeTab===2">
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">Is tech making coffee better or worse?</p>
+                    <p class="text-gray-500 text-sm mt-1">7h ago. 29comments. 16shares.</p>
+                </div>
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">The most innovative things happening in coffee</p>
+                    <p class="text-gray-500 text-sm mt-1">19h ago&bull; 24comments&bull; 12shares&bull;</p>
+                </div>
+            </div>
+
+
+            <div x-show="activeTab===3">
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">Ask Me Anything: 10 answers to your questions about coffee</p>
+                    <p class="text-gray-500 text-sm mt-1">2h ago&bull; 9comments&bull; 5shares&bull;</p>
+                </div>
+                <div class="p-3 hover:bg-gray-100 rounded-lg">
+                    <p class="font-bold">The worst advice we've ever heard about coffee</p>
+                    <p class="text-gray-500 text-sm mt-1">4h ago&bull; 1comments&bull; 2shares&bull;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+
+</html>
